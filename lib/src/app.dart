@@ -8,10 +8,11 @@ class MyApp extends StatelessWidget {
   Widget build(context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: 
-      Center(
+      home: ContadorPage()
+      /*home: Center(
         child: ContadorPage(),
-      ),
+      )*/
+      ,
     );
   }
 }

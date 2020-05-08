@@ -15,6 +15,7 @@ class ContadorPage extends StatefulWidget {
 class _ContadorPageState extends State<ContadorPage> {
   int _conteo = 10;
 
+  //DEFINE EL ESTILO DEL TEXTO
   final _estiloTexto = TextStyle(
     fontSize: 25,
     fontStyle: FontStyle.normal,
@@ -32,7 +33,7 @@ class _ContadorPageState extends State<ContadorPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Número de Clicks!!', style: _estiloTexto),
+            Text('Número de Taps!!', style: _estiloTexto),
             Text('$_conteo', style: _estiloTexto)
           ],
         ),
@@ -40,6 +41,7 @@ class _ContadorPageState extends State<ContadorPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           _conteo = _conteo + 1;
+          setState(() {});
         },
         child: Icon(Icons.add),
       ),

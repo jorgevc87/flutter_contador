@@ -13,7 +13,7 @@ class ContadorPage extends StatefulWidget {
 
 //ESTADO, el guion bajo convierte en privado a la clase
 class _ContadorPageState extends State<ContadorPage> {
-  int _conteo = 10;
+  int _conteo = 00;
 
   //DEFINE EL ESTILO DEL TEXTO
   final _estiloTexto = TextStyle(
@@ -38,14 +38,41 @@ class _ContadorPageState extends State<ContadorPage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _conteo = _conteo + 1;
+      floatingActionButton: _crearBotones()
+      //floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+    );
+  }
+
+  Widget _crearBotones(){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          SizedBox(width: 30.0,),
+          FloatingActionButton(
+        onPressed: (){
+          _conteo = 0;
+          setState(() {});
+        },
+        child: Text('0'),
+        ),
+        Expanded(child:SizedBox()),
+        FloatingActionButton(
+        onPressed: (){
+          _conteo ++;
           setState(() {});
         },
         child: Icon(Icons.add),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-    );
+        ),
+        FloatingActionButton(
+        onPressed: (){
+          if(_conteo > 0) {
+            _conteo --;
+          }
+          setState(() {});
+        },
+        child: Icon(Icons.remove),
+        )
+        ],
+      );
   }
 }
